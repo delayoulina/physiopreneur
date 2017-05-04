@@ -18,10 +18,7 @@
 <!--top-Header-menu-->
 <div id="user-nav" class="navbar navbar-inverse">
   <ul class="nav">
-    <li  class="dropdown" id="profile-messages" ><a title="" href="#" data-toggle="dropdown" data-target="#profile-messages" class="dropdown-toggle"><i class="icon icon-user"></i>  <span class="text">Welcome <?php echo $this->session->userdata("username"); ?></span><b class="caret"></b></a>
-      <ul class="dropdown-menu">
-        <li><a href="<?php echo base_url() ?>index.php/manager/viewProfileManager/<?= $this->session->userdata('username')?>"><i class="icon-user"></i> My Profile</a></li>
-      </ul>
+    <li  class="dropdown" id="profile-messages" ><a href="<?php echo base_url() ?>index.php/manager/viewProfileManager/<?= $this->session->userdata('username')?>"><i class="icon icon-user"></i>  <span class="text">Welcome <?php echo $this->session->userdata("username"); ?></span></a>
     </li>
 
     <li class=""><a title="" href="<?php echo base_url('index.php/login/action_logout'); ?>"><i class="icon icon-share-alt"></i> <span class="text">Logout</span></a></li>
