@@ -28,20 +28,20 @@
             <h5>Update Pasien</h5>
           </div>
           <div class="widget-content nopadding">
-            <?php foreach ($dataPasien->result() as $data){ ?>
-            <form action="<?php echo base_url('index.php/Pegawai/actionUpdatePasien') ?>" method="post" class="form-horizontal">
+            <?php foreach ($dataPasien->result() as $data) {
+    ?>
+            <form action="<?php echo base_url('index.php/Pegawai/actionUpdatePasien') ?>" method="post" class="form-horizontal" enctype="multipart/form-data">
 			      <div class="control-group">
                 <label class="control-label">Tipe Pasien</label>
-                <div class="controls">					
+                <div class="controls">
                   <select class="span11" name="tipe" required>
 				  <?php $selected = "";
-				  $selected1 = "";
-					if($data->id_jenis_pasien == 1){
-						$selected = "selected";
-					}else if($data->id_jenis_pasien == 2){
-						$selected1 = "selected";
-					}
-					?>
+    $selected1 = "";
+    if ($data->id_jenis_pasien == 1) {
+        $selected = "selected";
+    } elseif ($data->id_jenis_pasien == 2) {
+        $selected1 = "selected";
+    } ?>
             			<option value="1" <?= $selected ?> >Pelajar</option>
 						<option value="2" <?= $selected1 ?> >Umum</option>
         			</select>
@@ -81,14 +81,16 @@
                 <label class="control-label">Foto</label>
                 <div class="controls">
                   <img src="<?php echo base_url() ?>asset/foto_pasien/<?=$data->foto?>" alt="<?=$data->foto?>" style="width:100px; height:100px;"/>
-                  <input type="file" class="span11" />
+                  <input type="file" class="span11" name="fotoPasien"/>
                 </div>
               </div>
               <div class="form-actions">
                 <button class="btn btn-success">Update</button>
               </div>
             </form>
-            <?php } ?>
+            <?php
+
+} ?>
           </div>
         </div>
       </div>

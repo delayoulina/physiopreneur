@@ -52,32 +52,33 @@
                   <th>Provinsi</th>
                   <th>Service</th>
                   <th>Tarif</th>
-                  <th>Action</th>
+                  <!-- <th>Action</th> -->
                 </tr>
               </thead>
               <tbody>
                 <?php
                   //Kita akan melakukan looping sesuai dengan data yg dimiliki
                   $nomor = 1; //untuk pengisian nomor
-                  foreach ($dataTarif->result() as $row){
-                ?>
+                  foreach ($dataTarif->result() as $row) {
+                      ?>
                 <tr>
                   <td><center><?= $nomor++ ?></center></td>
                   <td><?= $row->lokasi ?></td>
                   <td><?= $row->provinsi ?></td>
                   <td><?= $row->jenis_pembayaran?></td>
                   <td><?= $row->tarif?></td>
-                  <td>
+                  <!-- <td>
                     <center>
-                      <!--akan masuk ke rekam medik-->
+
                       <a href="<?php echo base_url() ?>index.php/SuperAdmin/tampilDetailManager/<?= $row->id?>">
                         <button class="btn btn-primary"><i class="icon icon-search"></i> Details</button>
                       </a>
                     </center>
-                  </td>
+                  </td> -->
                 </tr>
                 <?php
-                }
+
+                  }
                 ?>
               </tbody>
             </table>
